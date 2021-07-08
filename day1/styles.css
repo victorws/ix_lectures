@@ -1,0 +1,45 @@
+.main {
+  background-color: gray;
+  padding: 5px;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.width-third {
+  width: 33%;
+}
+
+.width-two-thirds {
+  width: calc(66% + 10px);
+}
+
+.box {
+  margin: 5px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.purple {
+  background-color: purple;
+}

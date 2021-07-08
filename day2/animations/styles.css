@@ -1,0 +1,115 @@
+.box {
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+
+.box:hover {
+  background: green;
+}
+
+.big-box {
+  background: yellow;
+  width: 300px;
+  height: 300px;
+}
+
+.relative {
+  margin: 50px;
+
+  position: relative;
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scale-animation {
+  transition: transform 500ms;
+}
+.scale-animation:hover {
+  transform: scale(1.5) translateX(50px);
+}
+
+
+.move-animation {
+  position: absolute;
+  animation-name: move;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0% {
+    top: 0px;
+    right: 0px;
+    background-color: red;
+  }
+  25% {
+    top: 150px;
+    right: 0px;
+    background-color: green;
+  }
+  50% {
+    top: 150px;
+    right: 150px;
+    background-color: blue;
+  }
+  75% {
+    top: 0px;
+    right: 150px;
+    background-color: white;
+  }
+  100% {
+    top: 0px;
+    right: 0px;
+    background-color: red;
+  }
+}
+
+.absolute {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+#initial-box {
+  border-radius: 40px;
+}
+
+
+
+.animate-in {
+  animation-name: animate-in;
+  animation-duration: 5s;
+}
+@keyframes animate-in {
+  from {
+    transform: translateX(-110px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .box {
+    background: pink;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .box {
+    display: none;
+  }
+}
