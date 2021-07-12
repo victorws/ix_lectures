@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import './App.css';
 import { Component } from 'react';
@@ -11,16 +12,44 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      tasks: []
-    };
+    let tasksString = localStorage.getItem('tasks');
+    tasksString = tasksString ? tasksString : '[]';
+    const tasks = JSON.parse(tasksString);
+
+    this.state = { tasks: tasks };
+  }
+
+  saveTasksState(tasks) {
+    this.setState({ tasks: tasks });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   onTaskCreated(task) {
     this.state.tasks.push(task);
-    this.setState({
-      tasks: this.state.tasks
-    });
+    this.saveTasksState(this.state.tasks);
+  }
+
+  onTaskUpdated(task) {
+    const updatedTaskArr = this.state.tasks.map(t => t.id === task.id ? task : t);
+
+    // const updatedTaskArr = [];
+    // for (let i = 0; i < this.state.tasks.length; i++) {
+    //   const t = this.state.tasks[i];
+
+    //   if (t.id === task.id) {
+    //     updatedTaskArr.push(task);
+    //   } else {
+    //     updatedTaskArr.push(t);
+    //   }
+    // }
+
+    this.saveTasksState(updatedTaskArr);
+  }
+
+  onTaskRemoved(taskId) {
+    const updatedTaskArr = this.state.tasks.filter(task => task.id !== taskId);
+
+    this.saveTasksState(updatedTaskArr);
   }
 
   render() {
@@ -42,7 +71,11 @@ class App extends Component {
           createTask={(task) => this.onTaskCreated(task)}
         />
 
-        <TaskTable tasks={this.state.tasks} />
+        <TaskTable
+          tasks={this.state.tasks}
+          taskUpdated={(task) => this.onTaskUpdated(task)}
+          taskRemoved={(taskId) => this.onTaskRemoved(taskId)}
+        />
 
       </div>
     );

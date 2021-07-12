@@ -12,7 +12,7 @@ export default class AddTask extends Component {
   }
 
   onAddTask() {
-    const task = new Task(this.state.name, false);
+    const task = new Task(this.state.name);
     this.props.createTask(task);
     this.setState({ name: '' })
   }

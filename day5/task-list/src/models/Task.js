@@ -1,8 +1,8 @@
 
 export default class Task {
-  constructor(name, completed) {
+  constructor(name) {
     this.id = new Date().getTime();
+    this.completed = false;
     this.name = name;
-    this.completed = completed;
   }
 }
