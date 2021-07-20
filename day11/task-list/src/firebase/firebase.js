@@ -13,4 +13,4 @@ firebase.initializeApp({
 });
 
 
-export { firebase };
+export default firebase;
