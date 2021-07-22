@@ -1,0 +1,43 @@
+.main {
+  margin: 1rem;
+}
+
+.banner {
+  background-color: lightgray;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.map-container {
+  position: relative;
+  background-color: whitesmoke;
+
+  width: 100%;
+  height: calc(100vh - 2rem);
+}
+
+.markers {
+  background-color: lightgray;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+  top: 75px;
+  left: 10px;
+}
+
+.marker {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.remove {
+  margin-left: 10px;
+}
