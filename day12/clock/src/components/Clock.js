@@ -2,9 +2,7 @@
 import React, { Component } from 'react'
 
 export default class Clock extends Component {
-
-  timerId = '';
-
+  time_id_new = '';
   constructor(props) {
     super(props);
 
@@ -12,12 +10,10 @@ export default class Clock extends Component {
       date: new Date()
     };
   }
-
   componentDidMount() {
-    debugger
     console.log('componentDidMount');
 
-    this.timerId = setInterval(() => {
+    this.time_id_new = setInterval(() => {
       this.setState({ date: new Date() });
     }, 1000);
   }
@@ -27,9 +23,8 @@ export default class Clock extends Component {
   }
 
   componentWillUnmount() {
-    debugger
     console.log('componentWillUnmount');
-    clearInterval(this.timerId);
+    clearInterval(this.time_id_new);
   }
 
   render() {
