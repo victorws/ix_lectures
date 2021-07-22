@@ -18,9 +18,7 @@ export default class App extends Component {
   }
 
   render() {
-
     const { showClock } = this.state;
-
     return (
       <div>
 
@@ -30,7 +28,6 @@ export default class App extends Component {
             :
             <div></div>
         }
-
 
         <button onClick={() => this.toggleClock()}>
           Toggle Clock

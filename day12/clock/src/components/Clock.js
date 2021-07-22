@@ -12,7 +12,6 @@ export default class Clock extends Component {
       date: new Date()
     };
   }
-
   componentDidMount() {
     console.log('componentDidMount');
 
